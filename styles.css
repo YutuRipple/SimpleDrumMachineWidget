@@ -1,0 +1,68 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --bg-body: #f5fffd;
+    --drum-shell: #4c4c98;
+    --drum-pad-gradient: linear-gradient(145deg, #3a3a3a, #1f1f1f);
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    background: var(--bg-body);
+}
+
+#drum-machine {
+    background-image: linear-gradient(145deg, var(--drum-shell), 95%, #3c3c98);
+    box-shadow: 6px 6px 12px #3a3a3a;
+    border-radius: 8px;
+    padding: 20px;
+    margin: auto;
+    width: min(400px, 90%);
+    align-items: center;
+    gap: 24px;
+    justify-content: center;
+    flex-direction: column;
+    display: flex;
+}
+
+#pad-bank {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    
+    gap: 24px;
+}
+
+.drum-pad {
+    user-select: none;
+    background: var(--drum-pad-gradient);
+    color: white;
+    border-radius: 8px;
+    text-align: center;
+    align-content: center;
+    font-size: 1.2rem;
+    width: 96px;
+    height: 96px;
+}
+.drum-pad:active{
+    background: gray;
+    color: black;
+}
+
+#display{
+    cursor: crosshair;
+    user-select: none;
+    width: 80%;
+    text-align: center;
+    align-content: center;
+    border-radius: 12px;
+    background: var(--drum-pad-gradient);
+    color: orange;
+    height: 40px;
+}
